@@ -57,6 +57,7 @@ h1{
 }
 body{
     background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/time warp.gif");
+
 }
 .hide{
     visibility:hidden;
@@ -72,8 +73,13 @@ body{
 }
 .front{
     position:absolute;
-    background-image: url("/Users/rauljauregui/lfz/memory_match/queen of spade.jpg");
     background-size: cover;
     background-position: center;
     height: 100%;width: 100%;
+}
+.spade{
+     background-image: url("/Users/rauljauregui/lfz/memory_match/queen of spade.jpg");
+}
+.jack{
+    background-image: url("/Users/rauljauregui/lfz/memory_match/jackcard.jpg")
 }
