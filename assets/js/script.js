@@ -14,17 +14,28 @@ function handleCardClkick(event){
   if(firstCardClicked === null){
     firstCardClicked = $(event.currentTarget)
     firstCardImage = $(currentCard).css("background-image");
-  }
-  if(firstCardClicked !== null){
+  }else {
     secondCardClicked = $(event.currentTarget);
     secondCardImage = $(currentCard).css("background-image");
-  }
-  if(firstCardImage === secondCardImage){
-    matches +=1
-  }
-  if(firstCardImage !== secondCardImage){
-    setTimeout(function(){$(firstCardClicked).removeClass("hide")},2000);
-    setTimeout(function(){$(secondCardClicked).removeClass("hide")},2000);
+
+    console.log('Match?:', firstCardImage === secondCardImage);
+    if(firstCardImage === secondCardImage){
+      matches +=1;
+
+      firstCardClicked = null;
+      secondCardClicked = null;
+    } else {
+      setTimeout(function(){
+        $(firstCardClicked).removeClass("hide");
+        $(secondCardClicked).removeClass("hide");
+        firstCardClicked = null;
+        secondCardClicked = null;
+      },2000);
+    }
+    if(matches === 2){
+      $(".modal-content").css("visibility","visible");
+       $(".modal").css("display","block");
+    }
   }
 
   console.log(event);
