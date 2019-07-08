@@ -15,27 +15,24 @@ var alPacinoAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Say Hello To
 var bruceAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Yippeekiyay.mp3");
 var ramboAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Killing is easy as breathing.mp3")
 var melAudio = new Audio("/Users/rauljauregui/lfz/memory_match/If you dont have freedom.mp3");
-var vanAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Can do splits.mp3")
-var samuelAudio = new Audio("/Users/rauljauregui/lfz/memory_match/English do you speak it.mp3")
-var alienAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Nobody touch nothing.mp3")
-var woodAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Do You Feel Lucky Punk.mp3")
-
-
+var vanAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Can do splits.mp3");
+var samuelAudio = new Audio("/Users/rauljauregui/lfz/memory_match/English do you speak it.mp3");
+var alienAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Nobody touch nothing.mp3");
+var woodAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Do You Feel Lucky Punk.mp3");
 
 function initializeApp(){
   $(".card").on("click",handleSounds);
   $(".card").on("click",handleCardClkick);
   $("span").on("click",resetGame);
-
 }
+
 function calculateAccuracy(){
-  //debugger;
-accuracy = matches/attempts;
+accuracy = matches/attempts *100;
 var newAccuracy = accuracy.toFixed(2)
 $("aside div:nth-child(7)").text(newAccuracy+"%");
 }
+
 function resetGame(){
-  debugger;
         $('input').prop("checked",false);
         firstCardClicked=null;
         secondCardClicked=null;
@@ -56,9 +53,6 @@ function resetGame(){
 
 
 function handleSounds(event){
-//debugger;
-console.log(event);
-console.log(event.delegateTarget.lastElementChild);
 var currentEvent = event.delegateTarget.lastElementChild;
 var compareImageToSound = $(currentEvent).css("background-image");
 var arnold ='url("file:///Users/rauljauregui/lfz/memory_match/Arnold.jpg")';
@@ -79,41 +73,32 @@ switch(compareImageToSound){
       eddieAudio.play();
       break;
       case alPacino:
-        alPacinoAudio.play();
-        break;
-        case bruce:
-        bruceAudio.play();
-        break;
-        case rambo:
-          ramboAudio.play();
-          break;
-          case mel:
-            melAudio.play();
-            break;
-            case van:
-              vanAudio.play();
-              break;
-              case samuel:
-                samuelAudio.play();
-                break;
-                case alien:
-                  alienAudio.play();
-                  break;
+      alPacinoAudio.play();
+      break;
+      case bruce:
+      bruceAudio.play();
+      break;
+      case rambo:
+      ramboAudio.play();
+      break;
+      case mel:
+      melAudio.play();
+      break;
+      case van:
+      vanAudio.play();
+      break;
+      case samuel:
+      samuelAudio.play();
+      break;
+      case alien:
+      alienAudio.play();
+      break;
 
   }
 }
 
-
-
-
 function handleCardClkick(event){
-  //playSound("https://audio.code.org/win3.mp3", true);
-  console.log(event)
-  console.log(event.delegateTarget.parentElement.control)
-  console.log(event.delegateTarget.lastElementChild);
-  //debugger;
-  //$(event.currentTarget).removeClass("front backCard");
-  var currentCard =event.delegateTarget.lastElementChild; //event.delegateTarget.parentElement.childNodes[1];
+  var currentCard =event.delegateTarget.lastElementChild;
   if(firstCardClicked === null){
     firstCardClicked = $(event.currentTarget)
     checkbox1 = $(event.delegateTarget.parentElement.control);
@@ -125,12 +110,12 @@ function handleCardClkick(event){
     attempts +=1
     $("aside div:nth-child(5)").text(attempts);
     calculateAccuracy();
-
-    console.log('Match?:', firstCardImage === secondCardImage);
+    
     if(firstCardImage === secondCardImage){
       matches +=1;
       firstCardClicked = null;
       secondCardClicked = null;
+      calculateAccuracy();
     } else {
       setTimeout(function(){
         $(checkbox1).prop("checked",false);
@@ -140,14 +125,10 @@ function handleCardClkick(event){
       },700.000);
     }
     if(matches === 9){
-      //debugger;
       $(".modal-content").css("visibility","visible");
       $(".modal").css("display","block");
       woodAudio.play();
     }
   }
 
-  // console.log(event);
-  // console.log(event.delegateTarget.parentElement.childNodes[1]);
-  // console.log(event.currentTarget.baseURI);
 }
