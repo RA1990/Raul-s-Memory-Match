@@ -17,22 +17,21 @@ constructor(){
     this.attempts = null;
     this.accuracy = null;
     this.gamePlayed = null;
-    this.arnoldAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Get to the Choppa.mp3");
-    this.eddieAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Axels famous laugh.mp3")
-    this.alPacinoAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Say Hello To My Little Friend.mp3");
-    this.bruceAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Yippeekiyay.mp3");
-    this.ramboAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Killing is easy as breathing.mp3")
-    this.melAudio = new Audio("/Users/rauljauregui/lfz/memory_match/If you dont have freedom.mp3");
-    this.vanAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Can do splits.mp3");
-    this.samuelAudio = new Audio("/Users/rauljauregui/lfz/memory_match/English do you speak it.mp3");
-    this.alienAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Nobody touch nothing.mp3");
-    this.woodAudio = new Audio("/Users/rauljauregui/lfz/memory_match/Do You Feel Lucky Punk.mp3");
+    this.arnoldAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Get to the Choppa.mp3");
+    this.eddieAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Axels famous laugh.mp3")
+    this.alPacinoAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Say Hello To My Little Friend.mp3");
+    this.bruceAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Yippeekiyay.mp3");
+    this.ramboAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Killing is easy as breathing.mp3")
+    this.melAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/If you dont have freedom.mp3");
+    this.vanAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Can do splits.mp3");
+    this.samuelAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/English do you speak it.mp3");
+    this.alienAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Nobody touch nothing.mp3");
+    this.woodAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Do You Feel Lucky Punk.mp3");
     this.calculateAccuracy = this.calculateAccuracy.bind(this);
     this.resetGame = this.resetGame.bind(this);
     this.handleSounds = this.handleSounds.bind(this);
     this.handleCardClkick = this.handleCardClkick.bind(this);
     this.flipCardBack = this.flipCardBack.bind(this);
-    //this.setTimeout = this.setTimeout.bind(this);
     $(".card").on("click", this.handleSounds);
     $(".card").on("click", this.handleCardClkick);
     $("span").on("click", this.resetGame);
@@ -67,15 +66,15 @@ constructor(){
   handleSounds(event) {
     this.currentEvent = event.delegateTarget.lastElementChild;
     this.compareImageToSound = $(this.currentEvent).css("background-image");
-    this.arnold = 'url("file:///Users/rauljauregui/lfz/memory_match/Arnold.jpg")';
-    this.eddie = 'url("file:///Users/rauljauregui/lfz/memory_match/beverly_hills_cop_eddie_murphy_with_gun.jpg")';
-    this.alPacino = 'url("file:///Users/rauljauregui/lfz/memory_match/scarface.jpg")';
-    this.bruce = 'url("file:///Users/rauljauregui/lfz/memory_match/bruce.jpg")';
-    this.rambo = 'url("file:///Users/rauljauregui/lfz/memory_match/rambo1.jpeg")';
-    this.mel = 'url("file:///Users/rauljauregui/lfz/memory_match/mel.jpg")';
-    this.van = 'url("file:///Users/rauljauregui/lfz/memory_match/van2.jpg")';
-    this.samuel = 'url("file:///Users/rauljauregui/lfz/memory_match/sam.jpg")';
-    this.alien = 'url("file:///Users/rauljauregui/lfz/memory_match/alien.jpg")';
+    this.arnold = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/Arnold.jpg")';
+    this.eddie = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg")';
+    this.alPacino = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/scarface.jpg")';
+    this.bruce = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/bruce.jpg")';
+    this.rambo = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/rambo1.jpeg")';
+    this.mel = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/mel.jpg")';
+    this.van = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/van2.jpg")';
+    this.samuel = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/sam.jpg")';
+    this.alien = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/alien.jpg")';
     switch (this.compareImageToSound) {
       case this.arnold:
         this.arnoldAudio.play();
@@ -115,6 +114,7 @@ constructor(){
   }
 
   handleCardClkick(event) {
+    debugger;
     this.currentCard = event.delegateTarget.lastElementChild;
     if (this.firstCardClicked === null) {
       this.firstCardClicked = $(event.currentTarget)
@@ -134,7 +134,7 @@ constructor(){
         this.secondCardClicked = null;
         this.calculateAccuracy();
       } else {
-        setTimeout(this.flipCardBack, 600.000);
+        setTimeout(this.flipCardBack, 300.000);
       }
       if (this.matches === 9) {
         $(".modal-content").css("visibility", "visible");
