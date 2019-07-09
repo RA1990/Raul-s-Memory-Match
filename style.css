@@ -174,9 +174,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
 label {
     -webkit-perspective: 1000px;
     perspective: 1000px;

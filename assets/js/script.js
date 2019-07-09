@@ -32,6 +32,7 @@ constructor(){
     this.handleSounds = this.handleSounds.bind(this);
     this.handleCardClkick = this.handleCardClkick.bind(this);
     this.flipCardBack = this.flipCardBack.bind(this);
+    this.shuffle = this.shuffle.bind(this);
     $(".card").on("click", this.handleSounds);
     $(".card").on("click", this.handleCardClkick);
     $("span").on("click", this.resetGame);
@@ -60,7 +61,23 @@ constructor(){
     $("aside div:nth-child(7)").text(this.accuracy + "%");
     $(".modal-content").css("visibility", "hidden");
     $(".modal").css("display", "none");
+    $("div").removeClass("mel bruce alPacino arnold rambo eddie alien sam van");
+    this.classArray = ["mel", "bruce", "alPacino", "arnold", "rambo", "eddie", "alien", "sam", "van", "mel", "bruce", "alPacino", "arnold", "rambo", "eddie", "alien", "sam", "van"];
+    this.shuffle(this.classArray);
+    for(var i =0; i<this.classArray.length;i++){
+      $("."+i).addClass(this.classArray[i]);
+    }
   }
+  shuffle(){
+    this.randomArray = this.classArray;
+    for (var i = this.randomArray.length - 1; i >= 0; i--) {
+      this.randomIndex = Math.floor(Math.random() * (i + 1));
+      this.itemAtIndex = this.randomArray[this.randomIndex];
+      this.randomArray[this.randomIndex] = this.randomArray[i];
+      this.randomArray[i] = this.itemAtIndex;
+    }
+    }
+
 
 
   handleSounds(event) {
@@ -142,9 +159,5 @@ constructor(){
         this.woodAudio.play();
       }
     }
-
   }
-
-
-
 }
