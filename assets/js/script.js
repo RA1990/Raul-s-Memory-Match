@@ -7,6 +7,8 @@ function initializeApp(){
 class MemoryMatch{
 
 constructor(){
+    this.stopBigCheater=null;
+    this.stopCheater = null;
     this.firstCardClicked = null;
     this.secondCardClicked = null;
     this.matches = null;
@@ -32,6 +34,7 @@ constructor(){
     this.handleSounds = this.handleSounds.bind(this);
     this.handleCardClkick = this.handleCardClkick.bind(this);
     this.flipCardBack = this.flipCardBack.bind(this);
+    this.moveCardsAround = this.moveCardsAround.bind(this);
     this.shuffle = this.shuffle.bind(this);
     $(".card").on("click", this.handleSounds);
     $(".card").on("click", this.handleCardClkick);
@@ -67,6 +70,50 @@ constructor(){
     for(var i =0; i<this.classArray.length;i++){
       $("."+i).addClass(this.classArray[i]);
     }
+    this.moveCardsAround();
+  }
+  moveCardsAround(){
+    $(".cardContainer.A1").animate({ right: "163" });
+    $(".cardContainer.A7").animate({ bottom: "181" });
+    $(".cardContainer.A13").animate({ bottom: "181" });
+    $(".cardContainer.A14").animate({ right: "170" });
+    $(".cardContainer.A15").animate({ right: "170" });
+    $(".cardContainer.A9").animate({ top: "180" });
+    $(".cardContainer.A3").animate({ top: "180" });
+    $(".cardContainer.A1").animate({ left: "0" });
+    $(".cardContainer.A2").animate({ left: "170" });
+    $(".cardContainer.A7").animate({ left: "165" });
+    $(".cardContainer.A4").animate({ bottom: "180" });
+    $(".cardContainer.A10").animate({ bottom: "180" });
+    $(".cardContainer.A16").animate({ bottom: "180" });
+    $(".cardContainer.A17").animate({ right: "170" });
+    $(".cardContainer.A18").animate({ right: "0" });
+    $(".cardContainer.A11").animate({ top: "185" });
+    $(".cardContainer.A5").animate({ top: "185" });
+    $(".cardContainer.A10").animate({ left: "166" });
+    $(".cardContainer.A2").animate({ left: "332" });
+    $(".cardContainer.A4").animate({ right: "500" });
+    $(".cardContainer.A7").animate({ left: "333" });
+    $(".cardContainer.A1").animate({ left: "170" });
+    $(".cardContainer.A4").animate({ top: "10" });
+    $(".cardContainer.A6").animate({ right: "850" });
+    $(".cardContainer.A12").animate({ right: "850" });
+    $(".cardContainer.A18").animate({ right: "850" });
+    $(".cardContainer.A1").animate({ left: "340" });
+    $(".cardContainer.A2").animate({ left: "350" });
+    $(".cardContainer.A3").animate({ left: "184" });
+    $(".cardContainer.A4").animate({ left: "360" });
+    $(".cardContainer.A5").animate({ left: "200" });
+    $(".cardContainer.A7").animate({ left: "160" });
+    $(".cardContainer.A8").animate({ left: "172" });
+    $(".cardContainer.A9").animate({ left: "185" });
+    $(".cardContainer.A10").animate({ left: "190" });
+    $(".cardContainer.A11").animate({ left: "25" });
+    $(".cardContainer.A13").animate({ left: "160" });
+    $(".cardContainer.A14").animate({ right: "3" });
+    $(".cardContainer.A15").animate({ right: "0" });
+    $(".cardContainer.A16").animate({ left: "190" });
+    $(".cardContainer.A17").animate({ left: "200" });
   }
   shuffle(){
     this.randomArray = this.classArray;
@@ -75,10 +122,8 @@ constructor(){
       this.itemAtIndex = this.randomArray[this.randomIndex];
       this.randomArray[this.randomIndex] = this.randomArray[i];
       this.randomArray[i] = this.itemAtIndex;
+      }
     }
-    }
-
-
 
   handleSounds(event) {
     this.currentEvent = event.delegateTarget.lastElementChild;
@@ -131,7 +176,14 @@ constructor(){
   }
 
   handleCardClkick(event) {
-    debugger;
+    //debugger;
+    console.log(event);
+    console.log(event.target);
+    this.stopCheater = event.target;
+    this.stopBigCheater = event.delegateTarget.parentElement.control;
+    if($(this.stopCheater).hasClass("back")){
+      return $(this.stopBigCheater).prop("checked", false);
+    }
     this.currentCard = event.delegateTarget.lastElementChild;
     if (this.firstCardClicked === null) {
       this.firstCardClicked = $(event.currentTarget)
