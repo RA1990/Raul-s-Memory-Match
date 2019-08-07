@@ -19,16 +19,16 @@ constructor(){
     this.attempts = null;
     this.accuracy = null;
     this.gamePlayed = null;
-    this.arnoldAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Get to the Choppa.mp3");
-    this.eddieAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Axels famous laugh.mp3")
-    this.alPacinoAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Say Hello To My Little Friend.mp3");
-    this.bruceAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Yippeekiyay.mp3");
-    this.ramboAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Killing is easy as breathing.mp3")
-    this.melAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/If you dont have freedom.mp3");
-    this.vanAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Can do splits.mp3");
-    this.samuelAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/English do you speak it.mp3");
-    this.alienAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Nobody touch nothing.mp3");
-    this.woodAudio = new Audio("/Users/rauljauregui/lfz/memory_match/sounds/Do You Feel Lucky Punk.mp3");
+    this.arnoldAudio = new Audio("assets/sounds/Get to the Choppa.mp3");
+    this.eddieAudio = new Audio("assets/sounds/Axels famous laugh.mp3")
+    this.alPacinoAudio = new Audio("assets/sounds/Say Hello To My Little Friend.mp3");
+    this.bruceAudio = new Audio("assets/sounds/Yippeekiyay.mp3");
+    this.ramboAudio = new Audio("assets/sounds/Killing is easy as breathing.mp3")
+    this.melAudio = new Audio("assets/sounds/If you dont have freedom.mp3");
+    this.vanAudio = new Audio("assets/sounds/Can do splits.mp3");
+    this.samuelAudio = new Audio("assets/sounds/English do you speak it.mp3");
+    this.alienAudio = new Audio("assets/sounds/Nobody touch nothing.mp3");
+    this.woodAudio = new Audio("assets/sounds/Do You Feel Lucky Punk.mp3");
     this.calculateAccuracy = this.calculateAccuracy.bind(this);
     this.resetGame = this.resetGame.bind(this);
     this.handleSounds = this.handleSounds.bind(this);
@@ -128,15 +128,15 @@ constructor(){
   handleSounds(event) {
     this.currentEvent = event.delegateTarget.lastElementChild;
     this.compareImageToSound = $(this.currentEvent).css("background-image");
-    this.arnold = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/Arnold.jpg")';
-    this.eddie = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg")';
-    this.alPacino = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/scarface.jpg")';
-    this.bruce = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/bruce.jpg")';
-    this.rambo = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/rambo1.jpeg")';
-    this.mel = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/mel.jpg")';
-    this.van = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/van2.jpg")';
-    this.samuel = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/sam.jpg")';
-    this.alien = 'url("file:///Users/rauljauregui/lfz/memory_match/assets/images/alien.jpg")';
+    this.arnold = 'url("assets/images/Arnold.jpg")';
+    this.eddie = 'url("assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg")';
+    this.alPacino = 'url("assets/images/scarface.jpg")';
+    this.bruce = 'url("assets/images/bruce.jpg")';
+    this.rambo = 'url("assets/images/rambo1.jpeg")';
+    this.mel = 'url("assets/images/mel.jpg")';
+    this.van = 'url("assets/images/van2.jpg")';
+    this.samuel = 'url("assets/images/sam.jpg")';
+    this.alien = 'url("assets/images/alien.jpg")';
     switch (this.compareImageToSound) {
       case this.arnold:
         this.arnoldAudio.play();

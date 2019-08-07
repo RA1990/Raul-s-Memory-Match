@@ -59,7 +59,7 @@ h1{
     text-align: center
 }
 body{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/movie.jpg");
+    background-image: url("assets/images/movie.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -108,7 +108,7 @@ body{
   cursor:pointer;
 }
 .backCard{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/cinema-background-with-movie-objects_1823384.jpg");
+    background-image: url("assets/images/cinema-background-with-movie-objects_1823384.jpg");
     position: absolute;
     background-size: cover;
     background-position: center;
@@ -123,54 +123,54 @@ body{
     height: 100%;width: 100%;
 }
 .arnold{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/Arnold.jpg");
+    background-image: url("assets/images/Arnold.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .eddie{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg");
+    background-image: url("assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .alPacino{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/scarface.jpg");
+    background-image: url("assets/images/scarface.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .bruce{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/bruce.jpg");
+    background-image: url("assets/images/bruce.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .rambo{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/rambo1.jpeg");
+    background-image: url("assets/images/rambo1.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .mel{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/mel.jpg");
+    background-image: url("assets/images/mel.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .van{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/van2.jpg");
+    background-image: url("assets/images/van2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .sam{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/sam.jpg");
+    background-image: url("assets/images/sam.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .alien{
-    background-image: url("/Users/rauljauregui/lfz/memory_match/assets/images/alien.jpg");
+    background-image: url("assets/images/alien.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 .wood{
     height: 123%;
     width: 100%;
-    background-image: url(/Users/rauljauregui/lfz/memory_match/assets/images/wood.jpg);
+    background-image: url('assets/images/wood.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
