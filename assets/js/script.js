@@ -48,6 +48,7 @@ constructor(){
   }
 
   resetGame() {
+    this.woodAudio.pause();
     $('input').prop("checked", false);
     this.firstCardClicked = null;
     this.secondCardClicked = null;
@@ -128,46 +129,29 @@ constructor(){
   handleSounds(event) {
     this.currentEvent = event.delegateTarget.lastElementChild;
     this.compareImageToSound = $(this.currentEvent).css("background-image");
-    this.arnold = 'url("assets/images/Arnold.jpg")';
-    this.eddie = 'url("assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg")';
-    this.alPacino = 'url("assets/images/scarface.jpg")';
-    this.bruce = 'url("assets/images/bruce.jpg")';
-    this.rambo = 'url("assets/images/rambo1.jpeg")';
-    this.mel = 'url("assets/images/mel.jpg")';
-    this.van = 'url("assets/images/van2.jpg")';
-    this.samuel = 'url("assets/images/sam.jpg")';
-    this.alien = 'url("assets/images/alien.jpg")';
-    switch (this.compareImageToSound) {
-      case this.arnold:
-        this.arnoldAudio.play();
-        break;
-      case this.eddie:
-        this.eddieAudio.play();
-        break;
-      case this.alPacino:
-        this.alPacinoAudio.play();
-        break;
-      case this.bruce:
-        this.bruceAudio.play();
-        break;
-      case this.rambo:
-        this.ramboAudio.play();
-        break;
-      case this.mel:
-        this.melAudio.play();
-        break;
-      case this.van:
-        this.vanAudio.play();
-        break;
-      case this.samuel:
-        this.samuelAudio.play();
-        break;
-      case this.alien:
-        this.alienAudio.play();
-        break;
-
+    if (this.compareImageToSound.includes("Arnold.jpg")){
+      this.arnoldAudio.play();
+    } else if (this.compareImageToSound.includes("beverly_hills_cop_eddie_murphy_with_gun.jpg")){
+      this.eddieAudio.play();
+    } else if (this.compareImageToSound.includes("scarface.jpg")){
+      this.alPacinoAudio.play();
+    } else if (this.compareImageToSound.includes("bruce.jpg")){
+      this.bruceAudio.play();
+    } else if (this.compareImageToSound.includes("rambo1.jpeg")){
+      this.ramboAudio.play();
+    } else if (this.compareImageToSound.includes("mel.jpg")){
+      this.melAudio.play()
+    } else if (this.compareImageToSound.includes("van2.jpg")){
+      this.vanAudio.play();
+    } else if (this.compareImageToSound.includes("sam.jpg")){
+      this.samuelAudio.play();
+    } else if (this.compareImageToSound.includes("alien.jpg")){
+      this.alienAudio.play();
+    }else{
+      return false;
     }
   }
+
   flipCardBack() {
     (this.checkbox1).prop("checked", false);
     (this.checkbox2).prop("checked", false);
@@ -176,9 +160,6 @@ constructor(){
   }
 
   handleCardClkick(event) {
-    //debugger;
-    console.log(event);
-    console.log(event.target);
     this.stopCheater = event.target;
     this.stopBigCheater = event.delegateTarget.parentElement.control;
     if($(this.stopCheater).hasClass("back")){
