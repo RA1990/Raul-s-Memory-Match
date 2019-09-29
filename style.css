@@ -248,6 +248,7 @@ aside{
 
 .modal-content{
     margin-left:17%;
+    height: 110%;
 }
 header{
     width: 98vw;
@@ -292,6 +293,7 @@ aside{
     width: 75vh;
     height: 84%;
     margin-left: 4%;
+    margin-top: 18%;
 }
 }
 
@@ -310,7 +312,7 @@ aside{
 }
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){/*iphone*/
 .close{
-    margin-right: 25%;
+    margin-right: 28%;
 }
 #gameContainer{
     height: 72vh;
@@ -332,9 +334,10 @@ aside{
     width: 133vw;
     height: 84%;
     margin-left: 2%;
+    margin-top: 13%;
 }
 .wood {
     height: 57%;
-    width: 73%;
+    width: 72%;
 }
 }
