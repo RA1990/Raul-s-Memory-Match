@@ -109,7 +109,7 @@ body{
   cursor:pointer;
 }
 .backCard{
-    background-image: url("assets/images/cinema-background-with-movie-objects_1823384.jpg");
+    background-image: url("./assets/images/cinema-background-with-movie-objects_1823384.jpg");
     position: absolute;
     background-size: cover;
     background-position: center;
