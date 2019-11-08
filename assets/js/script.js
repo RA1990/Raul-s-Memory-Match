@@ -4,7 +4,7 @@ function initializeApp(){
   new MemoryMatch();
 }
 
-class MemoryMatch{
+class MemoryMatch {
 
 constructor(){
     this.stopBigCheater=null;
@@ -34,7 +34,6 @@ constructor(){
     this.handleSounds = this.handleSounds.bind(this);
     this.handleCardClkick = this.handleCardClkick.bind(this);
     this.flipCardBack = this.flipCardBack.bind(this);
-    this.moveCardsAround = this.moveCardsAround.bind(this);
     this.shuffle = this.shuffle.bind(this);
     $(".card").on("click", this.handleSounds);
     $(".card").on("click", this.handleCardClkick);
@@ -68,62 +67,19 @@ constructor(){
     $("div").removeClass("mel bruce alPacino arnold rambo eddie alien sam van");
     this.classArray = ["mel", "bruce", "alPacino", "arnold", "rambo", "eddie", "alien", "sam", "van", "mel", "bruce", "alPacino", "arnold", "rambo", "eddie", "alien", "sam", "van"];
     this.shuffle(this.classArray);
-    for(var i =0; i<this.classArray.length;i++){
-      $("."+i).addClass(this.classArray[i]);
+    for (var classArrayIndex = 0; classArrayIndex < this.classArray.length; classArrayIndex++){
+      $("." + classArrayIndex).addClass(this.classArray[classArrayIndex]);
     }
-    this.moveCardsAround();
-  }
-  moveCardsAround(){
-    // $(".cardContainer.A1").animate({ right: "15%"});
-    // $(".cardContainer.A7").animate({ bottom: "31%" });
-    // $(".cardContainer.A13").animate({ bottom: "30%" });
-    // $(".cardContainer.A14").animate({ right: "15%" });
-    // $(".cardContainer.A15").animate({ right: "15%" });
-    // $(".cardContainer.A9").animate({ top: "30%" });
-    // $(".cardContainer.A3").animate({ top: "30%" });
-    // $(".cardContainer.A1").animate({ left: "15%" });
-    // $(".cardContainer.A2").animate({ left: "15%" });
-    // $(".cardContainer.A7").animate({ left: "15%" });
-    // $(".cardContainer.A4").animate({ bottom: "40%" });
-    // $(".cardContainer.A10").animate({ bottom: "30%" });
-    // $(".cardContainer.A16").animate({ bottom: "30%" });
-    // $(".cardContainer.A17").animate({ right: "15%" });
-    // $(".cardContainer.A18").animate({ right: "0%" });
-    // $(".cardContainer.A11").animate({ top: "30%" });
-    // $(".cardContainer.A5").animate({ top: "30%" });
-    // $(".cardContainer.A10").animate({ left: "15%" });
-    // $(".cardContainer.A2").animate({ left: "15%" });
-    // $(".cardContainer.A4").animate({ right: "46%" });
-    // $(".cardContainer.A7").animate({ left: "15%" });
-    // $(".cardContainer.A1").animate({ left: "15%" });
-    // $(".cardContainer.A4").animate({ top: "0%" });
-    // $(".cardContainer.A6").animate({ right: "31%" });
-    //  $(".cardContainer.A1").animate({ left: "77%" });
-    // $(".cardContainer.A12").animate({ right: "850" });
-    // $(".cardContainer.A18").animate({ right: "850" });
 
-    // $(".cardContainer.A2").animate({ left: "350" });
-    // $(".cardContainer.A3").animate({ left: "184" });
-    // $(".cardContainer.A4").animate({ left: "360" });
-    // $(".cardContainer.A5").animate({ left: "200" });
-    // $(".cardContainer.A7").animate({ left: "160" });
-    // $(".cardContainer.A8").animate({ left: "172" });
-    // $(".cardContainer.A9").animate({ left: "185" });
-    // $(".cardContainer.A10").animate({ left: "190" });
-    // $(".cardContainer.A11").animate({ left: "25" });
-    // $(".cardContainer.A13").animate({ left: "160" });
-    // $(".cardContainer.A14").animate({ right: "3" });
-    // $(".cardContainer.A15").animate({ right: "0" });
-    // $(".cardContainer.A16").animate({ left: "190" });
-    // $(".cardContainer.A17").animate({ left: "200" });
   }
+
   shuffle(){
     this.randomArray = this.classArray;
-    for (var i = this.randomArray.length - 1; i >= 0; i--) {
-      this.randomIndex = Math.floor(Math.random() * (i + 1));
+    for (var classArrayIndex = this.randomArray.length - 1; i >= 0; classArrayIndex--) {
+      this.randomIndex = Math.floor(Math.random() * (classArrayIndex + 1));
       this.itemAtIndex = this.randomArray[this.randomIndex];
-      this.randomArray[this.randomIndex] = this.randomArray[i];
-      this.randomArray[i] = this.itemAtIndex;
+      this.randomArray[this.randomIndex] = this.randomArray[classArrayIndex];
+      this.randomArray[classArrayIndex] = this.itemAtIndex;
       }
     }
 
@@ -187,7 +143,7 @@ constructor(){
       } else {
         setTimeout(this.flipCardBack, 300.000);
       }
-      if (this.matches === 1) {
+      if (this.matches === 9) {
         $(".modal-content").css("visibility", "visible");
         $(".modal").css("display", "block");
         this.woodAudio.play();
