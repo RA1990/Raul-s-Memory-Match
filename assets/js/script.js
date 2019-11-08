@@ -4,7 +4,7 @@ function initializeApp(){
   new MemoryMatch();
 }
 
-class MemoryMatch{
+class MemoryMatch {
 
 constructor(){
     this.stopBigCheater=null;
@@ -67,19 +67,19 @@ constructor(){
     $("div").removeClass("mel bruce alPacino arnold rambo eddie alien sam van");
     this.classArray = ["mel", "bruce", "alPacino", "arnold", "rambo", "eddie", "alien", "sam", "van", "mel", "bruce", "alPacino", "arnold", "rambo", "eddie", "alien", "sam", "van"];
     this.shuffle(this.classArray);
-    for(var i =0; i<this.classArray.length;i++){
-      $("."+i).addClass(this.classArray[i]);
+    for (var classArrayIndex = 0; classArrayIndex < this.classArray.length; classArrayIndex++){
+      $("." + classArrayIndex).addClass(this.classArray[classArrayIndex]);
     }
 
   }
 
   shuffle(){
     this.randomArray = this.classArray;
-    for (var i = this.randomArray.length - 1; i >= 0; i--) {
-      this.randomIndex = Math.floor(Math.random() * (i + 1));
+    for (var classArrayIndex = this.randomArray.length - 1; i >= 0; classArrayIndex--) {
+      this.randomIndex = Math.floor(Math.random() * (classArrayIndex + 1));
       this.itemAtIndex = this.randomArray[this.randomIndex];
-      this.randomArray[this.randomIndex] = this.randomArray[i];
-      this.randomArray[i] = this.itemAtIndex;
+      this.randomArray[this.randomIndex] = this.randomArray[classArrayIndex];
+      this.randomArray[classArrayIndex] = this.itemAtIndex;
       }
     }
 
