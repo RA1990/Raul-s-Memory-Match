@@ -238,7 +238,10 @@ label:hover .card {
 input {
     display: none;
 }
-
+/* .flipped.card{
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+} */
 :checked + .card {
     transform: rotateX(180deg);
     -webkit-transform: rotateX(180deg);

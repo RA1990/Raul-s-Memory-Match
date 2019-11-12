@@ -7,7 +7,7 @@ function initializeApp(){
 class MemoryMatch {
 
 constructor(){
-    this.stopBigCheater=null;
+    this.stopBigCheater=null;// rename to prevent card flip
     this.stopCheater = null;
     this.firstCardClicked = null;
     this.secondCardClicked = null;
@@ -18,7 +18,7 @@ constructor(){
     this.checkbox2 = null;
     this.attempts = null;
     this.accuracy = null;
-    this.gamePlayed = null;
+    this.gamePlayed = null;//game played count rename
     this.arnoldAudio = new Audio("assets/sounds/Get to the Choppa.mp3");
     this.eddieAudio = new Audio("assets/sounds/Axels famous laugh.mp3")
     this.alPacinoAudio = new Audio("assets/sounds/Say Hello To My Little Friend.mp3");
@@ -29,6 +29,10 @@ constructor(){
     this.samuelAudio = new Audio("assets/sounds/English do you speak it.mp3");
     this.alienAudio = new Audio("assets/sounds/Nobody touch nothing.mp3");
     this.woodAudio = new Audio("assets/sounds/Do You Feel Lucky Punk.mp3");
+    this.audioPlayers = {
+      arnold: new Audio("assets/sounds/Get to the Choppa.mp3"),
+      eddie: new Audio("assets/sounds/Axels famous laugh.mp3")
+    }
     this.calculateAccuracy = this.calculateAccuracy.bind(this);
     this.resetGame = this.resetGame.bind(this);
     this.handleSounds = this.handleSounds.bind(this);
