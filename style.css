@@ -1,3 +1,13 @@
+.reset {
+    margin-top: 1%;
+    color: red;
+    border: 1px solid red;
+    height: 4vh;
+    width: 62vw;
+    text-align: center;
+    margin-left: 30%;
+    background-color: rgba(23,34,211,0.4);
+}
 aside>div{
     background-color:rgba(184, 20, 18,0.4);
     height: 12%;
@@ -31,7 +41,7 @@ aside> div:nth-child(1){
     width: 73vw;
     float: right;
     display: inline-block;
-    margin-top: 1%;
+    margin-top: -1%;
     margin-right: 2%;
 }
 .cardContainer{
@@ -260,11 +270,12 @@ header{
     margin-left: 39px;
 }
 #gameContainer{
-  margin-top: 4%;
+  margin-top: 1%;
   margin-right: 5%;
 }
-
-
+aside>div {
+    padding: 0%;
+}
 
 }
 
@@ -283,7 +294,7 @@ aside{
     margin-right: 1%;
 }
 #gameContainer{
-   margin-top: 2%;
+   margin-top: 0%;
    height: 52vh;
    width: 79vw;
 
@@ -294,6 +305,14 @@ aside{
     height: 84%;
     margin-left: 4%;
     margin-top: 18%;
+}
+.reset{
+    height: 3vh;
+    font-size: 15px;
+    margin-left: 28%;
+}
+aside>div{
+    padding-top: 1%
 }
 }
 
@@ -308,7 +327,16 @@ aside{
     height: 112%;
     margin-left: 27%;
 }
-
+.reset{
+    height: 5vh;
+    font-size: 15px;
+}
+aside>div{
+    padding-top: 1%
+}
+.stats{
+    font-size: 20px;
+}
 }
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){/*iphone*/
 .close{
@@ -318,6 +346,15 @@ aside{
     height: 72vh;
     width: 75vw;
     margin-top: 6%;
+}
+.reset{
+    font-size: 11px;
+    width: 48vw;
+    margin-left: 35%;
+    height: 2vh;
+}
+aside>div{
+    padding-top: 0%
 }
 aside{
     font-size: 16px;
