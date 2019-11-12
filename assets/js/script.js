@@ -35,6 +35,7 @@ constructor(){
     this.handleCardClkick = this.handleCardClkick.bind(this);
     this.flipCardBack = this.flipCardBack.bind(this);
     this.shuffle = this.shuffle.bind(this);
+    this.resetGameButton  = this.resetGameButton.bind(this);
     $(".card").on("click", this.handleSounds);
     $(".card").on("click", this.handleCardClkick);
     $("span").on("click", this.resetGame);
@@ -57,7 +58,7 @@ constructor(){
     this.checkbox2 = null;
     this.attempts = 0;
     this.accuracy = 0;
-    this.gamePlayed= 0;
+    this.gamePlayed = 0;
     $("aside div:nth-child(3)").text(this.gamePlayed);
     $("aside div:nth-child(5)").text(this.attempts);
     $("aside div:nth-child(7)").text(this.accuracy + "%");
