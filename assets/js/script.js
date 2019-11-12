@@ -38,6 +38,7 @@ constructor(){
     $(".card").on("click", this.handleSounds);
     $(".card").on("click", this.handleCardClkick);
     $("span").on("click", this.resetGame);
+    $(".reset").on("click", this.resetGameButton);
 }
 
   calculateAccuracy() {
@@ -45,7 +46,22 @@ constructor(){
     this.newAccuracy = this.accuracy.toFixed(2)
     $("aside div:nth-child(7)").text(this.newAccuracy + "%");
   }
-
+  resetGameButton(){
+    $('input').prop("checked", false);
+    this.firstCardClicked = null;
+    this.secondCardClicked = null;
+    this.matches = null;
+    this.firstCardImage = null;
+    this.secondCardImage = null;
+    this.checkbox1 = null;
+    this.checkbox2 = null;
+    this.attempts = 0;
+    this.accuracy = 0;
+    this.gamePlayed= 0;
+    $("aside div:nth-child(3)").text(this.gamePlayed);
+    $("aside div:nth-child(5)").text(this.attempts);
+    $("aside div:nth-child(7)").text(this.accuracy + "%");
+  }
   resetGame() {
     this.woodAudio.pause();
     $('input').prop("checked", false);
