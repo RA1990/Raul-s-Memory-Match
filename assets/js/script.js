@@ -47,6 +47,7 @@ constructor(){
     this.newAccuracy = this.accuracy.toFixed(2)
     $("aside div:nth-child(7)").text(this.newAccuracy + "%");
   }
+
   resetGameButton(){
     $('input').prop("checked", false);
     this.firstCardClicked = null;
@@ -63,6 +64,7 @@ constructor(){
     $("aside div:nth-child(5)").text(this.attempts);
     $("aside div:nth-child(7)").text(this.accuracy + "%");
   }
+
   resetGame() {
     this.woodAudio.pause();
     $('input').prop("checked", false);
@@ -92,7 +94,7 @@ constructor(){
 
   shuffle(){
     this.randomArray = this.classArray;
-    for (var classArrayIndex = this.randomArray.length - 1; i >= 0; classArrayIndex--) {
+    for (var classArrayIndex = this.randomArray.length - 1; classArrayIndex >= 0; classArrayIndex--) {
       this.randomIndex = Math.floor(Math.random() * (classArrayIndex + 1));
       this.itemAtIndex = this.randomArray[this.randomIndex];
       this.randomArray[this.randomIndex] = this.randomArray[classArrayIndex];
