@@ -1,202 +1,37 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="./assets/images/cinema-background-with-movie-objects_1823384.jpg">
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script src="assets/js/script.js"></script>
-    <title>MATCH &#128163;</title>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/cardData.js"></script>
+    <script src="assets/js/card.js"></script>
+    <script src="assets/js/memorymatch.js"></script>
+    <script src="assets/js/main.js"></script>
 </head>
+
 <body>
-<header>Raul's Memory Match</header>
-<div class="reset">Reset Game</div>
-<aside>
-    <h1 class="stats">Stats</h1>
-    <div>Games Played</div>
-    <div>0</div>
-    <div>Attempts</div>
-    <div>0</div>
-    <div>Accurracy</div>
-    <div>0%</div>
-</aside>
-<main>
-    <div id="gameContainer">
-        <div class="cardContainer A1">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="0 bruce back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A2">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="1 alPacino back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A3">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="2 arnold back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A4">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="3 alPacino back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A5">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="4 bruce back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A6">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="5 rambo back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A7">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="6 eddie back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A8">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="7 mel back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A9">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="8 eddie back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A10">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="9 mel back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A11">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="10 alien back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A12">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="11 rambo back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A13">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="12 sam back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A14">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="13 arnold back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A15">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="14 alien back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A16">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="15 sam back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A17">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="16 van back"></div>
-                </div>
-            </label>
-        </div>
-        <div class="cardContainer A18">
-            <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front backCard"></div>
-                    <div class="17 van back"></div>
-                </div>
-            </label>
+    <div id="stats">
+        <header>Raul's Memory Match</header>
+        <div class="reset">Reset Game</div>
+        <aside>
+            <h1 class="stats">Stats</h1>
+            <div>Games Played</div>
+            <div>0</div>
+            <div>Attempts</div>
+            <div>0</div>
+            <div>Accurracy</div>
+            <div>0%</div>
+        </aside>
+    </div>
+    <div id="cardArea">
+        <div class="cardContainer">
+            <div class="card">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
         </div>
     </div>
-</main>
-<div id="myModal" class="modal">
-
-<div class="modal-content">
-    <p class="wood"></p>
-    <span class="close">Do You Feel Lucky Punk</span>
-</div>
-
-</div>
 </body>
 
 </html>

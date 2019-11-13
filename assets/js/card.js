@@ -1,34 +1,76 @@
+class Card {
+    constructor(paramOptions, clickCallback) {
+        debugger;
+        //bind callbacks
+        this.handleClick = this.handleClick.bind(this);
 
-class Card{
-    constructor(dataObj, clickCallback){
-        this.name = dataObj.name;
-        this.data = {
-            frontImage: dataObj.front,
-            sound: dataObj.sound
+        //store any passed in properties (parameters)
+        this.options = {
+            frontImage: paramOptions.frontImage,
+            backImage: paramOptions.backImage,
+            id: paramOptions.id,
+            sounds: paramOptions.sounds
         }
+        this.clickCallback = clickCallback;
+
+        //store any required initial state for later use
         this.domElements = {
-            container: null,
+            cardContainer: null,
             card: null,
-            front: null,
-            back: null
+            frontFace: null,
+            backFace: null
         }
     }
-    handleClick(){
-        //call the callback from the constructor, pass in this
+    handleClick(event) {
+        debugger;
+        var target = event.target;
+        $(target).addClass("flipCard");
+        this.clickCallback(this);
     }
-    render(){
-        /* create the dom elements for this card
-        <div class="cardContainer A12">
-            <div class="card">
-                <div class="front backCard"></div>
-                <div class="11 rambo back"></div>
-            </div>
-        </div>
-        */
-       //create all the dom elements for this card
-       //add appropriate classes
-       //place elements inside each other as needed
-       //add click handler onto container, that calls this.handleClick
-       //return the container
+    playSound(key) {
+        debugger;
+        if (!this.options.sounds.hasOwnProperty(key)) {
+            return;
+        }
+        var player = new Audio();
+        player.oncanplaythrough = function () {
+            player.play();
+        }
+        player.src = this.options.sounds[key];
+    }
+    revealFront() {
+        this.domElements.backFace.hide();
+    }
+    coverFront() {
+        this.domElements.backFace.show();
+    }
+    getID() {
+        return this.options.id;
+    }
+    render() {
+        this.domElements.cardContainer = $("<div>", {
+            class: "cardContainer",
+            on: {
+                click: this.handleClick
+            }
+        });
+        this.domElements.card = $("<div>", {
+            class: 'card'
+        });
+        this.domElements.frontFace = $("<div>", {
+            class: 'front',
+            css: {
+                backgroundImage: `url(${this.options.frontImage})`
+            }
+        });
+        this.domElements.backFace = $("<div>", {
+            class: 'back',
+            css: {
+                backgroundImage: `url(${this.options.backImage}`
+            }
+        });
+        this.domElements.card.append(this.domElements.frontFace, this.domElements.backFace);
+        this.domElements.cardContainer.append(this.domElements.card);
+        return this.domElements.cardContainer;
     }
 }

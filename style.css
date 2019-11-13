@@ -1,3 +1,40 @@
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+#stats{
+    width: 20%;
+    height: 100%;
+}
+#cardArea{
+    margin-left: 4%;
+    margin-top: 14%;
+    width: 70vw;
+    height: 75vh;
+}
+.cardContainer{
+    float: left;
+    width: 16.6%;
+    height: 33.33%;
+}
+.card{
+    height: 90%;
+    width: 90%;
+    position: relative;
+    left: 5%;
+    top: 5%;
+}
+.back, .front{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+}
 .reset {
     margin-top: 1%;
     color: red;
@@ -34,25 +71,6 @@ aside{
 }
 aside> div:nth-child(1){
     margin-top: 26%;
-}
-#gameContainer{
-    background-color:transparent;
-    height: 77vh;
-    width: 73vw;
-    float: right;
-    display: inline-block;
-    margin-top: -1%;
-    margin-right: 2%;
-}
-.cardContainer{
-    height: 26%;
-    width: 9%;
-    display: inline-block;
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 1%;
-    position: relative;
-    cursor: pointer;;
 }
 header{
     color: red;
@@ -118,266 +136,16 @@ body{
   text-decoration: none;
   cursor:pointer;
 }
-.backCard{
-    background-image: url("./assets/images/cinema-background-with-movie-objects_1823384.jpg");
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
+ .cardContainer{
+
 }
-.front{
-    position:absolute;
-    background-size: cover;
-    background-position: center;
-    height: 100%;width: 100%;
-}
-.arnold{
-    background-image: url("assets/images/Arnold.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.eddie{
-    background-image: url("assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.alPacino{
-    background-image: url("assets/images/scarface.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.bruce{
-    background-image: url("assets/images/bruce.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.rambo{
-    background-image: url("assets/images/rambo1.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.mel{
-    background-image: url("assets/images/mel.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.van{
-    background-image: url("assets/images/van2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.sam{
-    background-image: url("assets/images/sam.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.alien{
-    background-image: url("assets/images/alien.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.wood{
-    border-radius: 4%;
-    height: 57%;
-    width: 93%;
-    background-image: url('assets/images/wood.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-label {
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    display: inline;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.card:hover{
     cursor: pointer;
-}
-
-.card {
-    position: relative;
-    height: 105%;
-    width: 160%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: all 600ms;
-    transition: all 600ms;
-    z-index: 20;
-}
-
-    .card div {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        text-align: center;
-        line-height: 200px;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 2px;
-    }
-
-    .card .back {
-        -webkit-transform: rotateX(180deg);
-        transform: rotateX(180deg);
-    }
-
-label:hover .card {
-    -webkit-transform: rotateX(20deg);
-    transform: rotateX(20deg);
+    -webkit-transform: rotateX(30deg);
+    transform: rotateX(30deg);
     box-shadow: 0 20px 20px rgba(50,50,50,.2);
 }
-
-input {
-    display: none;
-}
-/* .flipped.card{
+.flipCard{
     transform: rotateX(180deg);
     -webkit-transform: rotateX(180deg);
-} */
-:checked + .card {
-    transform: rotateX(180deg);
-    -webkit-transform: rotateX(180deg);
-}
-
-label:hover :checked + .card {
-    transform: rotateX(160deg);
-    -webkit-transform: rotateX(160deg);
-    box-shadow: 0 20px 20px rgba(255,255,255,.2);
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {/*ipad*/
-aside{
-   font-size: 27px;
-   height: 77vh;
-}
-
-.modal-content{
-    margin-left:17%;
-    height: 110%;
-}
-header{
-    width: 98vw;
-}
-.cardContainer{
-    height: 26%;
-    width: 10%;
-    margin-top: 2%;
-    margin-left: 39px;
-}
-#gameContainer{
-  margin-top: 1%;
-  margin-right: 5%;
-}
-aside>div {
-    padding: 0%;
-}
-
-}
-
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {/*ipad*/
-aside{
-    font-size: 30px;
-    height: 86vh;
-    width: 16vw;
-}
-.cardContainer{
-    height: 20%;
-    width: 16%;
-    margin-top: 2%;
-    margin-left: 11%;
-    margin-right: 1%;
-}
-#gameContainer{
-   margin-top: 0%;
-   height: 52vh;
-   width: 79vw;
-
-}
-.modal-content{
-    position: fixed;
-    width: 75vh;
-    height: 84%;
-    margin-left: 4%;
-    margin-top: 18%;
-}
-.reset{
-    height: 3vh;
-    font-size: 15px;
-    margin-left: 28%;
-}
-aside>div{
-    padding-top: 1%
-}
-}
-
-
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){/*iphone*/
-.close{
-    margin-right: 6%;
-}
-.modal-content{
-    position: fixed;
-    margin-top: -9%;
-    height: 112%;
-    margin-left: 27%;
-}
-.reset{
-    height: 5vh;
-    font-size: 15px;
-}
-aside>div{
-    padding-top: 1%
-}
-.stats{
-    font-size: 20px;
-}
-}
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){/*iphone*/
-.close{
-    margin-right: 28%;
-}
-#gameContainer{
-    height: 72vh;
-    width: 75vw;
-    margin-top: 6%;
-}
-.reset{
-    font-size: 11px;
-    width: 48vw;
-    margin-left: 35%;
-    height: 2vh;
-}
-aside>div{
-    padding-top: 0%
-}
-aside{
-    font-size: 16px;
-    width: 18vw;
-    height: 86vh;
-}
-.cardContainer{
-    height: 14%;
-    width: 17%;
-    margin-left: 10%;
-}
-.modal-content{
-    position: fixed;
-    width: 133vw;
-    height: 84%;
-    margin-left: 2%;
-    margin-top: 13%;
-}
-.wood {
-    height: 57%;
-    width: 72%;
-}
 }
