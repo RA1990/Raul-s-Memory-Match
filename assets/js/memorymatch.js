@@ -114,7 +114,6 @@ class MemoryMatch {
   }
 
   resetClickedCards() {
-    debugger;
     for (var cardI = 0; cardI < this.selectedCards.length; cardI++) {
       this.selectedCards[cardI].coverFront();
     }
