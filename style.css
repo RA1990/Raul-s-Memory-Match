@@ -9,10 +9,11 @@ body{
     height: 100%;
 }
 #cardArea{
+    position: sticky;
     margin-left: 4%;
-    margin-top: 14%;
-    width: 70vw;
-    height: 75vh;
+    margin-top: 10%;
+    width: 72vw;
+    height: 79vh;
 }
 .cardContainer{
     float: left;
@@ -20,12 +21,27 @@ body{
     height: 33.33%;
 }
 .card{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
     height: 90%;
     width: 90%;
     position: relative;
     left: 5%;
     top: 5%;
 }
+ .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        line-height: 200px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 2px;
+    }
 .back, .front{
     height: 100%;
     width: 100%;
@@ -34,15 +50,17 @@ body{
     position: absolute;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 .reset {
-    margin-top: 1%;
+    cursor: pointer;
+    margin-top: 2%;
     color: red;
     border: 1px solid red;
     height: 4vh;
-    width: 62vw;
+    width: 67vw;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 132%;
     background-color: rgba(23,34,211,0.4);
 }
 aside>div{
@@ -62,7 +80,7 @@ aside{
     font-size: 20px;
     color: red;
     display: inline-block;
-    height: 66vh;
+    height: 83vh;
     background-color: transparent;
     float: left;
     width: 20vw;
@@ -76,7 +94,7 @@ header{
     color: red;
     background-color: transparent;
     height: 98%;
-    width: 94vw;
+    width: 99vw;
     text-align: center;
     padding-top: 1%;
     font-size: 7vh;
@@ -89,7 +107,7 @@ h1{
     margin-bottom: 0%;
 }
 body{
-    height: 20vh;
+    height: 100vh;
     background-image: url("assets/images/movie.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -145,7 +163,22 @@ body{
     transform: rotateX(30deg);
     box-shadow: 0 20px 20px rgba(50,50,50,.2);
 }
-.flipCard{
-    transform: rotateX(180deg);
-    -webkit-transform: rotateX(180deg);
+.card.flipCard{
+     -webkit-transform: rotateX(160deg);
+    transform: rotateX(160deg);
+    box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}
+.statsContainer{
+
+}
+.head{
+
+}
+.wood{
+    border-radius: 4%;
+    height: 57%;
+    width: 93%;
+    background-image: url('assets/images/wood.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -23,8 +23,10 @@ class Card {
     }
     handleClick(event) {
         debugger;
-        var target = event.target;
-        $(target).addClass("flipCard");
+        var target = $(event.target);
+        if(target.hasClass("front")){
+            return;
+        }
         this.clickCallback(this);
     }
     playSound(key) {
@@ -39,7 +41,10 @@ class Card {
         player.src = this.options.sounds[key];
     }
     revealFront() {
-        this.domElements.backFace.hide();
+        debugger;
+        this.domElements.backFace.addClass("flipCard");
+        this.domElements.backFace.hide("flipCard");
+
     }
     coverFront() {
         this.domElements.backFace.show();
