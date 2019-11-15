@@ -1,6 +1,5 @@
 class Stats {
-  constructor(stats,statsArea) {
-    debugger;
+  constructor(stats) {
     this.stats = {
       gamesPlayed: stats.gamesPlayed,
       attempts: stats.attempts,
@@ -21,7 +20,6 @@ class Stats {
     }
   }
   render(stats = this.stats) {
-    debugger;
     this.domElements.statsContainer = $("<div>",{
       class:"statsContainer"
     })

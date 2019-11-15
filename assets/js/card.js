@@ -1,10 +1,6 @@
 class Card {
     constructor(paramOptions, clickCallback) {
-        debugger;
-        //bind callbacks
         this.handleClick = this.handleClick.bind(this);
-
-        //store any passed in properties (parameters)
         this.options = {
             frontImage: paramOptions.frontImage,
             backImage: paramOptions.backImage,
@@ -12,8 +8,6 @@ class Card {
             sounds: paramOptions.sounds
         }
         this.clickCallback = clickCallback;
-
-        //store any required initial state for later use
         this.domElements = {
             cardContainer: null,
             card: null,
@@ -22,7 +16,6 @@ class Card {
         }
     }
     handleClick(event) {
-        debugger;
         var target = $(event.target);
         if(target.hasClass("front")){
             return;
@@ -30,7 +23,6 @@ class Card {
         this.clickCallback(this);
     }
     playSound(key) {
-        debugger;
         if (!this.options.sounds.hasOwnProperty(key)) {
             return;
         }
@@ -41,7 +33,6 @@ class Card {
         player.src = this.options.sounds[key];
     }
     revealFront() {
-        debugger;
         this.domElements.backFace.addClass("flipCard");
         this.domElements.backFace.hide("flipCard");
 

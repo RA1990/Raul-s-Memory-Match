@@ -154,9 +154,6 @@ body{
   text-decoration: none;
   cursor:pointer;
 }
- .cardContainer{
-
-}
 .card:hover{
     cursor: pointer;
     -webkit-transform: rotateX(30deg);
@@ -168,12 +165,6 @@ body{
     transform: rotateX(160deg);
     box-shadow: 0 20px 20px rgba(50,50,50,.2);
 }
-.statsContainer{
-
-}
-.head{
-
-}
 .wood{
     border-radius: 4%;
     height: 57%;
@@ -181,4 +172,81 @@ body{
     background-image: url('assets/images/wood.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {/*ipad*/
+#cardArea{
+    margin-top: 14%;
+}
+.modal-content{
+    margin-left: 18%;
+}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {/*ipad*/
+aside>div{
+   height: 14%;
+   width: 53%;
+}
+h1{
+    margin-right: 37%;
+}
+aside{
+    font-size: 25px;
+}
+#cardArea{
+    margin-top: 23%;
+    width: 87vw;
+    height: 79vh;
+    margin-left: -7%;
+}
+.reset{
+    margin-top: 4%;
+    font-size: 36px;
+}
+.wood{
+    width: 73%;
+}
+.modal-content{
+    width: 86vh;
+    height: 84%;
+    margin-left: 10%;
+}
+.close{
+    margin-right: 24%;
+}
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){/*iphone*/
+#cardArea{
+    margin-top: 11%;
+}
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){/*iphone*/
+header{
+    font-size: 6vh;
+}
+aside>div{
+   height: 14%;
+   width: 62%;
+}
+h1{
+    margin-right: 37%;
+}
+aside{
+    font-size: 30px;
+}
+#cardArea {
+    margin-left: -5%;
+    margin-top: 29%;
+    width: 96vw;
+    height: 77vh;
+}
+.reset{
+    margin-top: 8%;
+    font-size: 36px;
+}
+.modal-content{
+    width: 61vh;
+    height: 84%;
+    margin-left: 0%;
+    margin-top: 22%;
+}
 }

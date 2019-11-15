@@ -5,6 +5,6 @@ $(document).ready(initiateApp);
 function initiateApp() {
   gameBoard = new MemoryMatch(data, '#cardArea',"#stats");
   gameBoard.addAllCards();
-  gameBoard.renderStats("#stats");
+  gameBoard.renderStats();
   $("div.reset").on("click", gameBoard.resetGame);
 }

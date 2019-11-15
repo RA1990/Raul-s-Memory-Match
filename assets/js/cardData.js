@@ -36,9 +36,7 @@ var data = [
     frontImage: 'assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg',
     backImage: 'assets/images/cinema-background-with-movie-objects_1823384.jpg',
     sounds: {
-      click: 'assets/sounds/Axels famous laugh.mp3',
-      match: 'sounds/goofy.mp3',
-      mismatch: 'sounds/goii.mp3'
+      click: 'assets/sounds/Axels famous laugh.mp3'
     }
   },
   {
@@ -46,9 +44,7 @@ var data = [
     frontImage: 'assets/images/beverly_hills_cop_eddie_murphy_with_gun.jpg',
     backImage: 'assets/images/cinema-background-with-movie-objects_1823384.jpg',
     sounds: {
-      click: 'assets/sounds/Axels famous laugh.mp3',
-      match: 'sounds/goofy.mp3',
-      mismatch: 'sounds/goofy-yell.mp3'
+      click: 'assets/sounds/Axels famous laugh.mp3'
     }
   },
   {
@@ -56,8 +52,7 @@ var data = [
     frontImage: 'assets/images/bruce.jpg',
     backImage: 'assets/images/cinema-background-with-movie-objects_1823384.jpg',
     sounds: {
-      click: 'assets/sounds/Yippeekiyay.mp3',
-      match: 'sounds/mickeyohboy.mp3'
+      click: 'assets/sounds/Yippeekiyay.mp3'
     }
   }
   ,
@@ -67,7 +62,6 @@ var data = [
     backImage: 'assets/images/cinema-background-with-movie-objects_1823384.jpg',
     sounds: {
       click: 'assets/sounds/Yippeekiyay.mp3',
-      match: 'sounds/steamboat.mp3'
     }
   },
   {
@@ -91,9 +85,7 @@ var data = [
     frontImage: 'assets/images/rambo1.jpeg',
     backImage: 'assets/images/cinema-background-with-movie-objects_1823384.jpg',
     sounds: {
-      click: 'assets/sounds/Killing is easy as breathing.mp3',
-      match: 'sounds/deepbark.mp3',
-      mismatch: 'sounds/barkconverterino.mp3'
+      click: 'assets/sounds/Killing is easy as breathing.mp3'
     }
   },
   {
@@ -101,9 +93,7 @@ var data = [
     frontImage: 'assets/images/rambo1.jpeg',
     backImage: 'assets/images/cinema-background-with-movie-objects_1823384.jpg',
     sounds: {
-      click: 'assets/sounds/Killing is easy as breathing.mp3',
-      match: 'sounds/deepbark.mp3',
-      mismaqtch: 'sounds/barkconverterino.mp3'
+      click: 'assets/sounds/Killing is easy as breathing.mp3'
     }
   },
   {

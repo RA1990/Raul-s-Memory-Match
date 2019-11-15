@@ -22,14 +22,15 @@ class MemoryMatch {
     this.selectedCards = [];
     $(".close").on("click",this.newGame);
   }
+
   resetGame(){
-    debugger;
     for (var key in this.stats) {
         this.stats[key] = 0;
       }
     this.updateStats();
     this.addAllCards();
   }
+
   newGame(){
     this.stats.gamesPlayed += 1;
     $(".modal-content").css("visibility", "hidden");
@@ -44,6 +45,7 @@ class MemoryMatch {
     $(".back").css("display","block");
     this.updateStats();
   }
+
   addAllCards() {
     this.domElements.cardArea.empty();
     this.randomArray = this.cardList;
@@ -53,31 +55,33 @@ class MemoryMatch {
       this.randomArray[this.randomIndex] = this.randomArray[classArrayIndex];
       this.randomArray[classArrayIndex] = this.itemAtIndex;
     }
-    for (var cardIndex = 0; cardIndex < this.randomArray.length; cardIndex++) {
+    for (var cardIndex = 0; cardIndex < this.cardList.length; cardIndex++) {
       this.makeCard(this.randomArray[cardIndex]);
     }
   }
-  renderStats(statsArea){
+
+  renderStats(){
     var statsToSend = this.stats
-    this.statsObject = new Stats(statsToSend,statsArea);
+    this.statsObject = new Stats(statsToSend);
     var upDatedStats = this.statsObject.render();
     this.domElements.stats.append(upDatedStats);
 
   }
+
   makeCard(cardData) {
     var card = new Card(cardData, this.handleCardClick);
     this.cardObjects.push(card);
     var cardDom = card.render();
     this.domElements.cardArea.append(cardDom);
   }
+
   updateStats(){
-    debugger;
     $(".gamesPlayedNumberValue").text(`${this.stats.gamesPlayed}`);
     $(".numberOfAttempts").text(`${this.stats.attempts}`);
     $(".accurracy").text(`${this.stats.accurracy}%`);
   }
+
   handleCardClick(clickedCardObject) {
-    debugger;
     if (this.selectedCards.length >= 2) {
       return;
     }
@@ -88,13 +92,11 @@ class MemoryMatch {
       var card1ID = this.selectedCards[0].getID();
       var card2ID = this.selectedCards[1].getID();
       if (card1ID === card2ID) {
-        // this.selectedCards[0].playSound('match');
         this.stats.attempts += 1;
         this.stats.matches += 1;
         this.selectedCards = [];
       } else {
         this.stats.attempts += 1;
-        // this.selectedCards[0].playSound('mismatch');
         setTimeout(this.resetClickedCards, this.revealTime);
       }
       var accurracy = this.stats.matches / this.stats.attempts * 100;
@@ -108,6 +110,7 @@ class MemoryMatch {
       clickedCardObject.playSound('click');
     }
   }
+
   resetClickedCards() {
     debugger;
     for (var cardI = 0; cardI < this.selectedCards.length; cardI++) {
