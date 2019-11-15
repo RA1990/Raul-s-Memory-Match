@@ -11,12 +11,14 @@ class MemoryMatch {
       cardArea: $(cardArea),
       stats: $(stats)
     }
+
     this.stats = {
       gamesPlayed:0,
       attempts:0,
       accurracy:0,
       matches:0
     }
+
     this.statsObject = null;
     this.revealTime = 1000;
     this.selectedCards = [];
