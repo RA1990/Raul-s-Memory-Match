@@ -1,8 +1,7 @@
 class MemoryMatch {
-  constructor(cardList, cardArea,stats) {
+  constructor(cardList, cardArea, stats) {
     this.handleCardClick = this.handleCardClick.bind(this);
     this.resetClickedCards = this.resetClickedCards.bind(this);
-    this.updateStats = this.updateStats.bind(this);
     this.newGame = this.newGame.bind(this);
     this.resetGame = this.resetGame.bind(this);
     this.cardList = cardList.slice();
@@ -13,39 +12,39 @@ class MemoryMatch {
     }
 
     this.stats = {
-      gamesPlayed:0,
-      attempts:0,
-      accurracy:0,
-      matches:0
+      gamesPlayed: 0,
+      attempts: 0,
+      accurracy: 0,
+      matches: 0
     }
 
     this.statsObject = null;
     this.revealTime = 1000;
     this.selectedCards = [];
-    $(".close").on("click",this.newGame);
+    $(".close").on("click", this.newGame);
   }
 
-  resetGame(){
+  resetGame() {
     for (var key in this.stats) {
-        this.stats[key] = 0;
-      }
-    this.updateStats();
-    this.addAllCards();
+      this.stats[key] = 0;
+    }
+    this.statsObject.updateStats(this.stats);
+    this.addAllCards(); q
   }
 
-  newGame(){
+  newGame() {
     this.stats.gamesPlayed += 1;
     $(".modal-content").css("visibility", "hidden");
     $(".modal").css("display", "none");
-    for(var key in this.stats){
-      if(key === "gamesPlayed"){
+    for (var key in this.stats) {
+      if (key === "gamesPlayed") {
         this.stats[key] = this.stats[key];
-      }else{
-      this.stats[key] = 0;
+      } else {
+        this.stats[key] = 0;
       }
     }
-    $(".back").css("display","block");
-    this.updateStats();
+    $(".back").css("display", "block");
+    this.statsObject.updateStats(this.stats);
   }
 
   addAllCards() {
@@ -57,12 +56,12 @@ class MemoryMatch {
       this.randomArray[this.randomIndex] = this.randomArray[classArrayIndex];
       this.randomArray[classArrayIndex] = this.itemAtIndex;
     }
-    for (var cardIndex = 0; cardIndex < this.cardList.length; cardIndex++) {
+    for (var cardIndex = 0; cardIndex < this.randomArray.length; cardIndex++) {
       this.makeCard(this.randomArray[cardIndex]);
     }
   }
 
-  renderStats(){
+  renderStats() {
     var statsToSend = this.stats
     this.statsObject = new Stats(statsToSend);
     var upDatedStats = this.statsObject.render();
@@ -75,12 +74,6 @@ class MemoryMatch {
     this.cardObjects.push(card);
     var cardDom = card.render();
     this.domElements.cardArea.append(cardDom);
-  }
-
-  updateStats(){
-    $(".gamesPlayedNumberValue").text(`${this.stats.gamesPlayed}`);
-    $(".numberOfAttempts").text(`${this.stats.attempts}`);
-    $(".accurracy").text(`${this.stats.accurracy}%`);
   }
 
   handleCardClick(clickedCardObject) {
@@ -107,7 +100,7 @@ class MemoryMatch {
         $(".modal-content").css("visibility", "visible");
         $(".modal").css("display", "block");
       }
-      this.updateStats();
+      this.statsObject.updateStats(this.stats, this.domElements.stats);
     } else {
       clickedCardObject.playSound('click');
     }
