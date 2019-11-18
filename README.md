@@ -5,5 +5,4 @@ Your goal is to quickly memorize the location of each image, then flip the cards
 
 
 
-![Image description](MatchFast.gif )
-
+![Image description](readme-pic.gif )
