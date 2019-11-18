@@ -16,16 +16,16 @@ var data = [
     }
   },
   {
-    id: 'arnoldd',
-    frontImage: 'assets/images/arnold.jpg',
+    id: 'arnold',
+    frontImage: 'assets/images/arnold.jpeg',
     backImage: 'assets/images/cinema-background.jpg',
     sounds: {
       click: 'assets/sounds/arnold.mp3'
     }
   },
   {
-    id: 'arnoldd',
-    frontImage: 'assets/images/arnold.jpg',
+    id: 'arnold',
+    frontImage: 'assets/images/arnold.jpeg',
     backImage: 'assets/images/cinema-background.jpg',
     sounds: {
       click: 'assets/sounds/arnold.mp3'
