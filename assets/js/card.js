@@ -1,6 +1,5 @@
 class Card {
     constructor(paramOptions, clickCallback) {
-        debugger;
         this.handleClick = this.handleClick.bind(this);
         this.options = paramOptions;
         this.clickCallback = clickCallback;

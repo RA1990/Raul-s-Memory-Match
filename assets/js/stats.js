@@ -28,8 +28,6 @@ class Stats {
   }
 
   render(stats = this.stats) {
-    var a = `f`
-    +`c`;
     this.domElements.statsContainer = $("<div>", {
       class: "statsContainer"
     })
@@ -49,7 +47,6 @@ class Stats {
     this.domElements.gamesPlayedText = $("<div>", {
       class: "gamesPlayedText",
       text: "Games Played"
-
     });
     this.domElements.gamesPlayedNumberValue = $("<div>", {
       class: "gamesPlayedNumberValue",

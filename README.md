@@ -12,5 +12,5 @@
     - The accuracy of the players attempts to match the cards in relation to the current game (as a percentage)
 4. The cards are displayed face down and "flip" over when they are clicked.
 5. Two cards can be flipped each round.
-6. match  all and Win!!!!!
+6. match  all and Win!!!!!!!!!!!!!!!!!!!!!
 </details>

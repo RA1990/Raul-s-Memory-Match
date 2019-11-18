@@ -21,6 +21,7 @@ class MemoryMatch {
     this.statsObject = null;
     this.revealTime = 1000;
     this.selectedCards = [];
+    this.audio = new Audio('assets/sounds/wood.mp3');
     $(".close").on("click", this.newGame);
   }
 
@@ -29,10 +30,12 @@ class MemoryMatch {
       this.stats[key] = 0;
     }
     this.statsObject.updateStats(this.stats);
-    this.addAllCards(); q
+    this.addAllCards();
   }
 
   newGame() {
+    this.audio.pause();
+    this.audio.currentTime = 0;
     this.stats.gamesPlayed += 1;
     $(".modal-content").css("visibility", "hidden");
     $(".modal").css("display", "none");
@@ -66,7 +69,6 @@ class MemoryMatch {
     this.statsObject = new Stats(statsToSend);
     var upDatedStats = this.statsObject.render();
     this.domElements.stats.append(upDatedStats);
-
   }
 
   makeCard(cardData) {
@@ -99,6 +101,7 @@ class MemoryMatch {
       if (this.stats.matches === 9) {
         $(".modal-content").css("visibility", "visible");
         $(".modal").css("display", "block");
+        this.audio.play();
       }
       this.statsObject.updateStats(this.stats, this.domElements.stats);
     } else {

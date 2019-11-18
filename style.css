@@ -1,8 +1,11 @@
 body {
     margin: 0;
-    height: 100vh;
     width: 100vw;
     display: flex;
+    height: 100vh;
+    background-image: url("assets/images/movie.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #stats {
@@ -13,7 +16,7 @@ body {
 #card-area {
     position: sticky;
     margin-left: 4%;
-    margin-top: 10%;
+    margin-top: 11%;
     width: 72vw;
     height: 79vh;
 }
@@ -25,9 +28,6 @@ body {
 }
 
 .card {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: all 600ms;
     transition: all 600ms;
     z-index: 20;
     height: 90%;
@@ -35,17 +35,6 @@ body {
     position: relative;
     left: 5%;
     top: 5%;
-}
-
-.card div {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    line-height: 200px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 2px;
 }
 
 .back, .front {
@@ -60,73 +49,66 @@ body {
 }
 
 .reset {
-    font-size: 3vh;
-    font-family: Kenia,sans-serif;
+    font-size: 4vh;
+    font-family: Kenia, sans-serif;
     cursor: pointer;
     margin-top: 2%;
-    color: red;
+    color: white;
     border: 1px solid red;
     height: 4vh;
     width: 67vw;
     text-align: center;
     margin-left: 132%;
-    background-color: rgba(23, 34, 211, 0.4);
+    background-color: rgba(184, 20, 18, 0.4);
 }
 
-aside>div {
+.gamesPlayedText, .attemptsText, .accurracyText {
+    color: white;
+    font-size: 4vh;
     background-color: rgba(184, 20, 18, 0.4);
-    height: 12%;
+    height: 25%;
     width: 103%;
     display: flex;
     justify-content: space-around;
     margin-left: 4%;
-    margin-top: 2%;
     text-align: center;
     padding-top: 3%;
-    font-family: Kenia,sans-serif;
+    font-family: Kenia, sans-serif;
     border: 1px double red;
 }
 
-aside {
-    font-size: 20px;
-    color: red;
-    display: inline-block;
-    height: 83vh;
-    background-color: transparent;
-    float: left;
-    width: 20vw;
-    margin-top: 1%;
-    border: 1px dotted transparent;
+.gamesPlayedNumberValue, .numberOfAttempts, .accurracy {
+    margin-left: 13%;
+    text-align: center;
+    margin-top: -35%;
+    margin-bottom: 32%;
+    font-size: 4vh;
+    font-family: Kenia, sans-serif;
+    color: white;
 }
 
-aside>div:nth-child(1) {
-    margin-top: 26%;
+aside {
+    height: 83vh;
+    margin-top: 1%;
 }
 
 header {
-    color: red;
-    background-color: transparent;
-    height: 98%;
+    color: white;
     width: 99vw;
     text-align: center;
-    padding-top: 1%;
     font-size: 7vh;
-    font-family: Ewert,sans-serif;
+    font-family: Nosifer, sans-serif;
     border: 5px dotted red;
 }
 
 h1 {
-    font-family: Kenia,sans-serif;
+    color: white;
+    margin-left: 4%;
+    font-size: 6vh;
+    font-family: Kenia, sans-serif;
     margin-top: 0%;
     text-align: center;
     margin-bottom: 0%;
-}
-
-body {
-    height: 100vh;
-    background-image: url("assets/images/movie.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .hide {
@@ -157,19 +139,16 @@ body {
 
 .close {
     border-radius: 6%;
-    position: relative;
     color: #aaaaaa;
     font-size: 32px;
     font-weight: bold;
     text-align: center;
     background-color: red;
     border: 2px solid black;
-    background-position: inherit;
-    line-height: 5vh;
 }
 
 .close:hover, .close:focus {
-    color: #000;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
@@ -189,8 +168,7 @@ body {
 
 .wood {
     border-radius: 4%;
-    height: 57%;
-    width: 93%;
+    height: 73%;
     background-image: url('assets/images/wood.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -200,83 +178,144 @@ body {
     /*ipad*/
     #card-area {
         margin-top: 14%;
+        margin-left: -3%;
+        width: 83vw;
     }
     .modal-content {
         margin-left: 18%;
+    }
+    .gamesPlayedText, .attemptsText, .accurracyText {
+        width: 75%;
+    }
+    .gamesPlayedNumberValue, .numberOfAttempts, .accurracy {
+        margin-left: -14%;
+    }
+    h1 {
+        margin-left: 0%;
+        margin-right: 15%;
     }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     /*ipad*/
-    aside>div {
-        height: 14%;
-        width: 53%;
-    }
-    h1 {
-        margin-right: 37%;
+    header {
+        font-size: 4vh;
     }
     aside {
-        font-size: 25px;
+        display: inline-flex;
+        width: 98vw;
+        height: 56vh;
+        margin-top: 4%;
+    }
+    h1 {
+        display: none;
     }
     #card-area {
-        margin-top: 23%;
-        width: 87vw;
-        height: 79vh;
-        margin-left: -7%;
+        margin-left: -18%;
+        margin-top: 44%;
+        width: 98vw;
+        height: 66vh;
+    }
+    .gamesPlayedNumberValue, .numberOfAttempts, .accurracy {
+        margin-left: -15%;
+        margin-top: 12%;
+        margin-right: 13%;
     }
     .reset {
-        margin-top: 4%;
-        font-size: 36px;
+        width: 99vw;
+        margin-left: 2%;
     }
-    .wood {
-        width: 73%;
+    .accurracy {
+        margin-left: 79%;
+        position: absolute;
+    }
+    .numberOfAttempts {
+        margin-left: 51%;
+        position: absolute;
+    }
+    .gamesPlayedNumberValue {
+        margin-left: 18%;
+        position: absolute;
     }
     .modal-content {
-        width: 86vh;
-        height: 84%;
-        margin-left: 10%;
+        margin-left: 2%;
+    }
+    .wood {
+        width: 97vw;
     }
     .close {
-        margin-right: 24%;
+        margin-right: 21%;
+        font-size: 4vh;
     }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
     /*iphone*/
+    .modal-content {
+        margin-top: -3%;
+    }
     #card-area {
-        margin-top: 11%;
+        margin-top: 12%;
     }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
     /*iphone*/
     header {
-        font-size: 6vh;
-    }
-    aside>div {
-        height: 14%;
-        width: 62%;
-    }
-    h1 {
-        margin-right: 37%;
+        font-size: 5vh;
     }
     aside {
-        font-size: 30px;
+        display: inline-flex;
+        width: 98vw;
+        height: 56vh;
+        margin-top: 4%;
+    }
+    h1 {
+        display: none;
     }
     #card-area {
-        margin-left: -5%;
-        margin-top: 29%;
-        width: 96vw;
-        height: 77vh;
+        margin-top: 101%;
+        margin-left: -18%;
+        width: 98vw;
+        height: 35vh;
+    }
+    .gamesPlayedNumberValue, .numberOfAttempts, .accurracy {
+        font-size: 3vh;
+        margin-left: -15%;
+        margin-top: 24%;
+        margin-right: 13%;
+    }
+    .gamesPlayedText, .attemptsText, .accurracyText {
+        margin-top: 10%;
+        font-size: 3vh;
     }
     .reset {
-        margin-top: 8%;
-        font-size: 36px;
+        font-size: 3vh;
+        width: 99vw;
+        margin-left: 2%;
+        margin-top: 37%;
+    }
+    .accurracy {
+        margin-left: 79%;
+        position: absolute;
+    }
+    .numberOfAttempts {
+        margin-left: 51%;
+        position: absolute;
+    }
+    .gamesPlayedNumberValue {
+        margin-left: 18%;
+        position: absolute;
     }
     .modal-content {
-        width: 61vh;
-        height: 84%;
-        margin-left: 0%;
-        margin-top: 22%;
+        margin-left: 2%;
+    }
+    .wood {
+        width: 97vw;
+        background-size: contain;
+    }
+    .close {
+        margin-right: 45%;
+        font-size: 4vh;
     }
 }
