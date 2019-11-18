@@ -16,7 +16,7 @@ var data = [
     }
   },
   {
-    id: 'arnold',
+    id: 'arnoldd',
     frontImage: 'assets/images/arnold.jpg',
     backImage: 'assets/images/cinema-background.jpg',
     sounds: {
@@ -24,7 +24,7 @@ var data = [
     }
   },
   {
-    id: 'arnold',
+    id: 'arnoldd',
     frontImage: 'assets/images/arnold.jpg',
     backImage: 'assets/images/cinema-background.jpg',
     sounds: {
