@@ -1,12 +1,7 @@
 class Card {
     constructor(paramOptions, clickCallback) {
         this.handleClick = this.handleClick.bind(this);
-        this.options = {
-            frontImage: paramOptions.frontImage,
-            backImage: paramOptions.backImage,
-            id: paramOptions.id,
-            sounds: paramOptions.sounds
-        }
+        this.options = paramOptions;
         this.clickCallback = clickCallback;
         this.domElements = {
             cardContainer: null,
@@ -17,7 +12,7 @@ class Card {
     }
     handleClick(event) {
         var target = $(event.target);
-        if(target.hasClass("front")){
+        if (target.hasClass("front")) {
             return;
         }
         this.clickCallback(this);
