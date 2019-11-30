@@ -40,7 +40,7 @@ class Card {
     }
     render() {
         this.domElements.cardContainer = $("<div>", {
-            class: "cardContainer",
+            class: "card-container",
             on: {
                 click: this.handleClick
             }

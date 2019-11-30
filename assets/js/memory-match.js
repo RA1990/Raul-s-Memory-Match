@@ -26,10 +26,10 @@ class MemoryMatch {
   }
 
   resetGame() {
-    for (var key in this.stats) {
-      this.stats[key] = 0;
-    }
-    this.statsObject.updateStats(this.stats);
+    // for (var key in this.stats) {
+    //   this.stats[key] = 0;
+    // }
+    this.statsObject.reset();
     this.addAllCards();
   }
 
