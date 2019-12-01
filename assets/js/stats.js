@@ -24,7 +24,7 @@ class Stats {
   updateStats(statsToUpDate) {
     this.domElements.gamesPlayedNumberValue.text(statsToUpDate.gamesPlayed);
     this.domElements.numberOfAttempts.text(statsToUpDate.attempts);
-    this.domElements.accurracy.text(statsToUpDate.accurracy);
+    this.domElements.accurracy.text(statsToUpDate.accurracy + "%");
   }
   reset() {
     this.domElements.gamesPlayedNumberValue.text(0);
@@ -44,7 +44,9 @@ class Stats {
       class: "reset",
       text: "Reset Game"
     });
-    this.domElements.aside = $("<aside>");
+    this.domElements.aside = $("<aside>", {
+      class: "aside-box"
+    });
     this.domElements.h1 = $("<h1>", {
       class: "stats",
       text: "Stats"

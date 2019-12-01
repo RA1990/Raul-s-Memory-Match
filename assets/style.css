@@ -3,7 +3,7 @@ body {
     width: 100vw;
     display: flex;
     height: 100vh;
-    background-image: url("assets/images/movie.jpg");
+    background-image: url("images/movie.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -169,7 +169,7 @@ h1 {
 .wood {
     border-radius: 4%;
     height: 73%;
-    background-image: url('assets/images/wood.jpg');
+    background-image: url('images/wood.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -249,35 +249,31 @@ h1 {
     }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
-    /*iphone*/
-    .modal-content {
-        margin-top: -3%;
-    }
-    #card-area {
-        margin-top: 12%;
-    }
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
-    /*iphone*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
     header {
-        font-size: 5vh;
+        display: none;
+    }
+    .card-container {
+        width: 32.6%;
+    }
+    .back, .front {
+        background-size: contain;
     }
     aside {
         display: inline-flex;
         width: 98vw;
-        height: 56vh;
+        height: 30vh;
         margin-top: 4%;
     }
     h1 {
         display: none;
     }
     #card-area {
-        margin-top: 101%;
+        margin-top: 31%;
         margin-left: -18%;
         width: 98vw;
-        height: 35vh;
+        height: 41vh;
     }
     .games-played-number-value, .number-of-attempts, .accurracy {
         font-size: 3vh;
@@ -286,24 +282,27 @@ h1 {
         margin-right: 13%;
     }
     .games-played-text, .attempts-text, .accurracy-text {
-        margin-top: 10%;
+        margin-top: 2%;
         font-size: 3vh;
     }
     .reset {
         font-size: 3vh;
         width: 99vw;
         margin-left: 2%;
-        margin-top: 37%;
+        margin-top: 10%;
     }
     .accurracy {
+        margin-top: 12%;
         margin-left: 79%;
         position: absolute;
     }
     .number-of-attempts {
+        margin-top: 12%;
         margin-left: 51%;
         position: absolute;
     }
     .games-played-number-value {
+        margin-top: 12%;
         margin-left: 18%;
         position: absolute;
     }
@@ -317,5 +316,157 @@ h1 {
     .close {
         margin-right: 45%;
         font-size: 4vh;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    /*iphone 6,7,8*/
+    .modal-content {
+        margin-top: -3%;
+    }
+    #card-area {
+        margin-top: 12%;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 500px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    /*iphone 6,7,8*/
+    header {
+        font-size: 5vh;
+    }
+    aside-box {
+        height: 28vh;
+    }
+    h1 {
+        display: none;
+    }
+    #card-area {
+        margin-top: 28%;
+        margin-left: -16%;
+        width: 95vw;
+        height: 42vh;
+    }
+    .games-played-number-value, .number-of-attempts, .accurracy {
+        font-size: 3vh;
+        margin-left: -15%;
+        margin-top: 24%;
+        margin-right: 13%;
+    }
+    .games-played-text, .attempts-text, .accurracy-text {
+        margin-top: 2%;
+        font-size: 3vh;
+    }
+    .reset {
+        font-size: 5vh;
+        width: 99vw;
+        margin-left: 2%;
+        margin-top: 0%;
+    }
+    .accurracy {
+        margin-top: 11%;
+        margin-left: 79%;
+        position: absolute;
+    }
+    .number-of-attempts {
+        margin-top: 11%;
+        margin-left: 51%;
+        position: absolute;
+    }
+    .games-played-number-value {
+        margin-top: 11%;
+        margin-left: 18%;
+        position: absolute;
+    }
+    .modal-content {
+        margin-left: 2%;
+    }
+    .wood {
+        width: 97vw;
+        background-size: contain;
+    }
+    .close {
+        margin-right: 45%;
+        font-size: 4vh;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    /* iphone x */
+    header {
+        font-size: 3vh;
+    }
+    .aside-box {
+        margin-top: -40%;
+    }
+    h1 {
+        display: none;
+    }
+    #card-area {
+        margin-top: 31%;
+        margin-left: -18%;
+        width: 98vw;
+        height: 41vh;
+    }
+    .games-played-number-value, .number-of-attempts, .accurracy {
+        font-size: 3vh;
+        margin-left: -15%;
+        margin-top: 24%;
+        margin-right: 13%;
+    }
+    .games-played-text, .attempts-text, .accurracy-text {
+        margin-top: 10%;
+        font-size: 2vh;
+    }
+    .reset {
+        font-size: 5vh;
+        width: 99vw;
+        margin-left: 2%;
+        margin-top: 0%;
+    }
+    .accurracy {
+        margin-top: 20%;
+        margin-left: 79%;
+        position: absolute;
+    }
+    .number-of-attempts {
+        margin-top: 20%;
+        margin-left: 51%;
+        position: absolute;
+    }
+    .games-played-number-value {
+        margin-top: 20%;
+        margin-left: 18%;
+        position: absolute;
+    }
+    .modal-content {
+        margin-left: 2%;
+    }
+    .wood {
+        width: 97vw;
+        background-size: contain;
+    }
+    .close {
+        margin-right: 53%;
+        font-size: 3vh;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    /* iphone x */
+    .back {
+        background-size: cover;
+    }
+    .front {
+        background-size: contain;
+    }
+    #card-area {
+        margin-top: 10%;
+    }
+    .accurracy {
+        margin-bottom: 31%;
+    }
+    .modal-content {
+        margin-left: 29%;
+        margin-top: -6%;
     }
 }
