@@ -22,6 +22,7 @@ class Card {
             return;
         }
         var player = new Audio();
+        player.volume = 0.1;
         player.oncanplaythrough = function () {
             player.play();
         }

@@ -166,6 +166,10 @@ h1 {
     box-shadow: 0 20px 20px rgba(50, 50, 50, .2);
 }
 
+.no-hover {
+    pointer-events: none;
+}
+
 .wood {
     border-radius: 4%;
     height: 73%;
@@ -469,4 +473,8 @@ h1 {
         margin-left: 29%;
         margin-top: -6%;
     }
+}
+
+.no-hover {
+    pointer-events: none;
 }
