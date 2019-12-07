@@ -27,6 +27,7 @@ class Stats {
     this.domElements.accurracy.text(statsToUpDate.accurracy + "%");
   }
   reset() {
+    $(".card").removeClass("no-hover");
     this.domElements.gamesPlayedNumberValue.text(0);
     this.domElements.numberOfAttempts.text(0);
     this.domElements.accurracy.text(0);
