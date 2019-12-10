@@ -7,7 +7,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.reset:hover{
+    color: red;
+}
 #stats {
     width: 20%;
     height: 100%;
