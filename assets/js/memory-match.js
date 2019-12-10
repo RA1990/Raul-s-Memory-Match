@@ -29,7 +29,7 @@ class MemoryMatch {
     for (var key in this.stats) {
       this.stats[key] = 0;
     }
-    this.statsObject.updateStats(this.stats);
+    this.statsObject.reset();
     this.addAllCards();
   }
 
@@ -37,6 +37,7 @@ class MemoryMatch {
     this.audio.pause();
     this.audio.currentTime = 0;
     this.stats.gamesPlayed += 1;
+    $(".card").removeClass("no-hover");
     $(".modal-content").css("visibility", "hidden");
     $(".modal").css("display", "none");
     for (var key in this.stats) {
@@ -88,7 +89,11 @@ class MemoryMatch {
     if (this.selectedCards.length === 2) {
       var card1ID = this.selectedCards[0].getID();
       var card2ID = this.selectedCards[1].getID();
+      var cardOne = this.selectedCards[0];
+      var cardTwo = this.selectedCards[1];
       if (card1ID === card2ID) {
+        $(cardOne.domElements.card[0]).addClass("no-hover");
+        $(cardTwo.domElements.card[0]).addClass("no-hover");
         this.stats.attempts += 1;
         this.stats.matches += 1;
         this.selectedCards = [];
@@ -99,9 +104,11 @@ class MemoryMatch {
       var accurracy = this.stats.matches / this.stats.attempts * 100;
       this.stats.accurracy = accurracy.toFixed(2);
       if (this.stats.matches === 9) {
-        $(".modal-content").css("visibility", "visible");
-        $(".modal").css("display", "block");
-        this.audio.play();
+        setTimeout(() => {
+          $(".modal-content").css("visibility", "visible");
+          $(".modal").css("display", "block");
+          this.audio.play();
+        }, 2000);
       }
       this.statsObject.updateStats(this.stats, this.domElements.stats);
     } else {

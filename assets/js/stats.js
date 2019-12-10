@@ -22,9 +22,15 @@ class Stats {
     }
   }
   updateStats(statsToUpDate) {
-    $(".gamesPlayedNumberValue").text(`${statsToUpDate.gamesPlayed}`);
-    $(".numberOfAttempts").text(`${statsToUpDate.attempts}`);
-    $(".accurracy").text(`${statsToUpDate.accurracy}%`);
+    this.domElements.gamesPlayedNumberValue.text(statsToUpDate.gamesPlayed);
+    this.domElements.numberOfAttempts.text(statsToUpDate.attempts);
+    this.domElements.accurracy.text(statsToUpDate.accurracy + "%");
+  }
+  reset() {
+    $(".card").removeClass("no-hover");
+    this.domElements.gamesPlayedNumberValue.text(0);
+    this.domElements.numberOfAttempts.text(0);
+    this.domElements.accurracy.text(0);
   }
 
   render(stats = this.stats) {
@@ -39,29 +45,31 @@ class Stats {
       class: "reset",
       text: "Reset Game"
     });
-    this.domElements.aside = $("<aside>");
+    this.domElements.aside = $("<aside>", {
+      class: "aside-box"
+    });
     this.domElements.h1 = $("<h1>", {
       class: "stats",
       text: "Stats"
     });
     this.domElements.gamesPlayedText = $("<div>", {
-      class: "gamesPlayedText",
+      class: "games-played-text",
       text: "Games Played"
     });
     this.domElements.gamesPlayedNumberValue = $("<div>", {
-      class: "gamesPlayedNumberValue",
+      class: "games-played-number-value",
       text: `${stats.gamesPlayed}`
     });
     this.domElements.attemptsText = $("<div>", {
-      class: "attemptsText",
+      class: "attempts-text",
       text: "Attempts"
     });
     this.domElements.numberOfAttempts = $("<div>", {
-      class: "numberOfAttempts",
+      class: "number-of-attempts",
       text: `${stats.attempts}`
     });
     this.domElements.accurracyText = $("<div>", {
-      class: "accurracyText",
+      class: "accurracy-text",
       text: "Accurracy"
     });
     this.domElements.accurracy = $("<div>", {

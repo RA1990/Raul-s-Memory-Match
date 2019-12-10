@@ -22,6 +22,7 @@ class Card {
             return;
         }
         var player = new Audio();
+        player.volume = 0.1;
         player.oncanplaythrough = function () {
             player.play();
         }
@@ -40,7 +41,7 @@ class Card {
     }
     render() {
         this.domElements.cardContainer = $("<div>", {
-            class: "cardContainer",
+            class: "card-container",
             on: {
                 click: this.handleClick
             }
